@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -21,19 +21,16 @@
       position: relative;
     }
 
-    .logo-container {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
     .logo {
-      height: 70px;
+      height: 80px;
+      margin-bottom: 10px;
     }
 
     .controles {
       margin-bottom: 10px;
       display: flex;
       gap: 10px;
+      justify-content: center;
     }
 
     .controles button {
@@ -64,28 +61,16 @@
       padding: 10px;
       font-style: italic;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 18px;
       text-align: center;
       margin-top: 5px;
-      white-space: normal;
-    }
-
-    .firma {
-      text-align: center;
-      font-weight: bold;
-      font-size: 26px;
-      margin-top: 5px;
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo arriba -->
-  <div class="logo-container">
-    <img src="logo.JPG" alt="Importadora La Uno" class="logo">
-  </div>
-
-  <!-- Botones (no se imprimen) -->
+  <!-- Botones -->
   <div class="controles">
     <button onclick="window.print()">🖨️ Imprimir</button>
     <button onclick="limpiarCampos()">🧹 Limpiar</button>
@@ -98,27 +83,32 @@
   </div>
 
   <div class="campo">
-    <label for="telefono">TELEFONO:</label><br>
+    <label for="telefono">TELÉFONO:</label><br>
     <input type="text" id="telefono" name="telefono">
   </div>
 
   <div class="campo">
-    <label for="direccion">DIRECCION:</label><br>
+    <label for="direccion">DIRECCIÓN:</label><br>
     <textarea id="direccion" name="direccion" rows="2"></textarea>
   </div>
 
-  <!-- Mensaje final -->
+  <!-- Mensaje con logo y firma -->
   <div class="mensaje">
+    <img src="logo.JPG" alt="Importadora La Uno" class="logo"><br>
     QUERIDO CLIENTE, GRACIAS POR SU COMPRA.<br>
     ESPERAMOS QUE EL PEDIDO SEA DE SU AGRADO Y DE BENDICIÓN.<br>
-    ¡LE ESPERAMOS PRONTO!
-  </div>
-
-  <!-- Firma final -->
-  <div class="firma">
+    ¡LE ESPERAMOS PRONTO!<br>
     IMPORTADORA LA UNO
   </div>
 
+  <!-- Script -->
   <script>
     function limpiarCampos() {
-      document.getElementById('nombre')
+      document.getElementById('nombre').value = '';
+      document.getElementById('telefono').value = '';
+      document.getElementById('direccion').value = '';
+    }
+  </script>
+
+</body>
+</html>
