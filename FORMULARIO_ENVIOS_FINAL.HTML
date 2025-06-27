@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario Cliente</title>
+  <style>
+    @media print {
+      .controles {
+        display: none !important;
+      }
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      width: 8.5in;
+      height: 5in;
+      margin: auto;
+      border: 1px solid black;
+      padding: 10px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .logo {
+      height: 70px;
+    }
+
+    .controles {
+      margin-bottom: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .controles button {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .campo {
+      border: 1px solid black;
+      margin-bottom: 8px;
+      padding: 5px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      font-size: 16px;
+      border: none;
+      outline: none;
+    }
+
+    .mensaje {
+      border: 1px solid black;
+      padding: 10px;
+      font-style: italic;
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+      margin-top: 5px;
+      white-space: normal;
+    }
+
+    .firma {
+      text-align: center;
+      font-weight: bold;
+      font-size: 26px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo arriba -->
+  <div class="logo-container">
+    <img src="logo.JPG" alt="Importadora La Uno" class="logo">
+  </div>
+
+  <!-- Botones (no se imprimen) -->
+  <div class="controles">
+    <button onclick="window.print()">🖨️ Imprimir</button>
+    <button onclick="limpiarCampos()">🧹 Limpiar</button>
+  </div>
+
+  <!-- Formulario -->
+  <div class="campo">
+    <label for="nombre">NOMBRE:</label><br>
+    <input type="text" id="nombre" name="nombre">
+  </div>
+
+  <div class="campo">
+    <label for="telefono">TELEFONO:</label><br>
+    <input type="text" id="telefono" name="telefono">
+  </div>
+
+  <div class="campo">
+    <label for="direccion">DIRECCION:</label><br>
+    <textarea id="direccion" name="direccion" rows="2"></textarea>
+  </div>
+
+  <!-- Mensaje final -->
+  <div class="mensaje">
+    QUERIDO CLIENTE, GRACIAS POR SU COMPRA.<br>
+    ESPERAMOS QUE EL PEDIDO SEA DE SU AGRADO Y DE BENDICIÓN.<br>
+    ¡LE ESPERAMOS PRONTO!
+  </div>
+
+  <!-- Firma final -->
+  <div class="firma">
+    IMPORTADORA LA UNO
+  </div>
+
+  <script>
+    function limpiarCampos() {
+      document.getElementById('nombre')
